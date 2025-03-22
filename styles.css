@@ -29,7 +29,7 @@ body {
 nav {
     position: fixed;
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem;
     background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -143,9 +143,10 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 6rem 2rem 2rem;
+    padding: 7rem 2rem 2rem;
     background: var(--background);
     overflow: hidden;
+    margin-top: 0;
 }
 
 .hero-content {
@@ -653,7 +654,7 @@ footer {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     nav {
-        padding: 0.8rem 1.5rem;
+        padding: 0.8rem 1rem;
     }
 
     .nav-container {
@@ -666,6 +667,7 @@ footer {
         width: 100%;
         justify-content: center;
         order: 2;
+        padding: 0.5rem 0;
     }
 
     .nav-left {
@@ -678,7 +680,8 @@ footer {
 
     .hero {
         min-height: auto;
-        padding: 5rem 2rem 1.5rem;
+        padding: 7rem 2rem 1.5rem;
+        margin-top: 0;
     }
 
     .split-section {
