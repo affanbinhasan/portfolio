@@ -29,11 +29,14 @@ body {
 nav {
     position: fixed;
     width: 100%;
-    padding: 1.5rem 2rem;
-    background: rgba(10, 10, 10, 0.8);
+    padding: 1rem 2rem;
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    top: 0;
+    left: 0;
 }
 
 .nav-container {
@@ -59,20 +62,20 @@ nav {
 }
 
 .logo {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text);
     font-style: italic;
     transition: all 0.3s ease;
-    opacity: 0.9;
-}
-
-.logo-link:hover .logo {
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    opacity: 0.8;
+}
+
+.logo-link:hover .logo {
     opacity: 1;
+    transform: translateY(-1px);
 }
 
 .nav-center {
@@ -85,22 +88,21 @@ nav {
 
 .nav-center a {
     font-family: var(--font-mono);
-    color: var(--text);
     text-decoration: none;
-    opacity: 0.8;
-    transition: all 0.3s ease;
     text-transform: uppercase;
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 0.1em;
-}
-
-.nav-center a:hover {
-    opacity: 1;
+    transition: all 0.3s ease;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    opacity: 0.8;
+}
+
+.nav-center a:hover {
+    opacity: 1;
     transform: translateY(-1px);
 }
 
@@ -119,30 +121,29 @@ nav {
 
 .social-links a {
     font-size: 1.2rem;
-    color: var(--text);
     text-decoration: none;
-    opacity: 0.9;
     transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    opacity: 1;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    opacity: 0.8;
+}
+
+.social-links a:hover {
+    opacity: 1;
     transform: translateY(-1px);
 }
 
 /* Hero Section */
 .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 7rem 2rem 5rem;
+    padding: 6rem 2rem 2rem;
     background: var(--background);
     overflow: hidden;
 }
@@ -269,20 +270,21 @@ nav {
 
 .skill-tag {
     font-family: var(--font-mono);
-    background: rgba(255, 255, 255, 0.05);
     padding: 0.5rem 1.2rem;
     border-radius: 20px;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: none;
     cursor: default;
     display: inline-block;
     letter-spacing: 0;
+    color: var(--text);
+    background: var(--gradient);
+    opacity: 0.9;
 }
 
 .skill-tag:hover {
-    background: var(--gradient);
-    border-color: transparent;
+    opacity: 1;
     transform: translateY(-2px);
 }
 
@@ -541,8 +543,8 @@ footer {
 /* Split Section Layout */
 .split-section {
     display: flex;
-    gap: 4rem;
-    padding: 0 2rem 5rem;
+    gap: 3rem;
+    padding: 1rem 2rem 4rem;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -650,18 +652,47 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    nav {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .nav-center {
+        gap: 1.5rem;
+        width: 100%;
+        justify-content: center;
+        order: 2;
+    }
+
+    .nav-left {
+        flex: 0 0 auto;
+    }
+
+    .nav-right {
+        flex: 0 0 auto;
+    }
+
     .hero {
-        padding: 6rem 1.5rem 3rem;
+        min-height: auto;
+        padding: 5rem 2rem 1.5rem;
     }
 
     .split-section {
         flex-direction: column;
-        gap: 4rem;
-        padding: 0 1.5rem 3rem;
+        padding: 1rem 1.5rem 2rem;
+        gap: 2rem;
     }
 
     .section-left, .section-right {
         width: 100%;
+    }
+
+    .section-right {
+        order: 2;
     }
 
     .awards-list {
@@ -673,22 +704,6 @@ footer {
         margin-bottom: 1.5rem;
     }
 
-    .nav-container {
-        flex-wrap: wrap;
-    }
-
-    .nav-center {
-        gap: 1.5rem;
-    }
-
-    .nav-center a {
-        font-size: 0.9rem;
-    }
-
-    .social-links {
-        padding-left: 1.5rem;
-    }
-
     .skills-container {
         justify-content: center;
         padding: 0.5rem;
@@ -697,10 +712,8 @@ footer {
     }
     
     .hero-content {
-        padding: 2rem;
-        margin: 1rem auto;
-        width: calc(100% - 2rem);
-        max-width: 100%;
+        padding: 1.5rem;
+        margin: 0.5rem auto;
     }
 
     .hero-content h1 {
@@ -713,8 +726,8 @@ footer {
     }
 
     .current-company {
-        padding: 1.2rem;
-        margin-bottom: 2rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .achievements {
